@@ -2,7 +2,8 @@
 const ratings = require("../data/ratings-data");
 
 function list(req, res) {
-    res.json({ data: ratings });
+    const { noteId } = req.params; 
+    res.json({ data: ratings.filter(noteId ? rating => rating.noteId == noteId : () => true) });
 }
 
 // Middleware vailidation fx to verify rating exists

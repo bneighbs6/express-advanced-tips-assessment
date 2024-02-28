@@ -1,5 +1,5 @@
 // Create instance of express router()
-const router = require("express").Router();
+const router = require("express").Router({ mergeParams: true });
 
 // Import ratings controller
 const controller = require("./ratings.controller")
