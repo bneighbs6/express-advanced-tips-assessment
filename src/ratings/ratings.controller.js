@@ -15,7 +15,7 @@ function ratingExists(req, res, next) {
         return next();
     }
     next({ 
-        status: 400,
+        status: 404,
         message: `Rating id not found ${ratingId}`,
     })
 }

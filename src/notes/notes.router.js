@@ -1,10 +1,11 @@
 const router = require("express").Router();
 const controller = require("./notes.controller");
+const ratingsController = require("../ratings/ratings.controller")
 const methodNotAllowed = require("../errors/methodNotAllowed");
 const ratingsRouter = require("../ratings/ratings.router")
 
 // New route for "/:noteId/ratings/:ratingId"
-// router.use("/:noteId/ratings/:ratingId")
+router.use("/:noteId/ratings/:ratingId", controller.noteExists, ratingsController.ratingExists, ratingsRouter)
 
 // New route for "/:noteId/ratings"
 // This route will return all ratings for the specific note
