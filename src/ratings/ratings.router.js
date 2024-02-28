@@ -1,10 +1,13 @@
-const methodNotAllowed = require("../errors/methodNotAllowed");
-
+// Create instance of express router()
 const router = require("express").Router();
 
-// need to import controller when it has functioning code
+// Import ratings controller
 const controller = require("./ratings.controller")
 
+// Import methodNotAllowed() fx 
+const methodNotAllowed = require("../errors/methodNotAllowed");
+
+// Create new route for "/"
 router.route("/").get(controller.list).all(methodNotAllowed);
 
 module.exports = router; 
