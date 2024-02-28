@@ -7,6 +7,9 @@ const controller = require("./ratings.controller")
 // Import methodNotAllowed() fx 
 const methodNotAllowed = require("../errors/methodNotAllowed");
 
+// Create new route for "/:ratingId"
+router.route("/:ratingId") // chain more requests
+
 // Create new route for "/"
 router.route("/").get(controller.list).all(methodNotAllowed);
 
