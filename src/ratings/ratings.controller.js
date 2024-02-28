@@ -19,6 +19,10 @@ function ratingExists(req, res, next) {
     })
 }
 
+// read() to read the foundRating data 
+function read(req, res) {
+    res.json({ data: res.locals.rating })
+}
 module.exports = {
     list,
 }
