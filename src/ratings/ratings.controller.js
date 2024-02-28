@@ -27,4 +27,5 @@ function read(req, res) {
 module.exports = {
     list,
     read: [ratingExists, read],
+    ratingExists
 }
